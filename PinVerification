@@ -1,0 +1,17 @@
+#Initial Solution
+
+def validate_pin(pin):
+    checkFlag = False #initialize a flag to keep track of the PIN validation
+    if pin.isnumeric():
+        if len(pin) == 4 or len(pin) == 6: #check each acceptable string length
+            checkFlag = True
+        else:
+            checkFlag = False
+    else: #if not all character were numeric, flag is set to false
+        checkFlag = False
+        
+    return checkFlag
+    
+#Better solution    
+def validate_pin(pin):
+    return len(pin) in (4, 6) and pin.isdigit()
